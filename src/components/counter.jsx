@@ -1,22 +1,46 @@
 import React, { Component } from 'react';
 class Counter extends Component {
     state = { 
-        count: 1,
-        imageUrl: 'https://picsum.photos/200'
+        count: 0,
+        imageUrl: 'https://picsum.photos/200',
+        tags: []
      }
+
+    // constructor()
+    // {
+    //     super();
+    //     this.handleIncrement = this.handleIncrement.bind(this);
+    // } 
 
     render() { 
 
         return (
         <React.Fragment>
-            <p className={this.getBadgeClasses()}>{this.formatCount()}</p>
-            <button className="btn btn-primary btn-sm">Increment</button>
+            {/* <p className={this.getBadgeClasses()}>{this.formatCount()}</p> */}
+            <a href="#" className={this.getBadgeClasses()} tabindex="-1" role="button" aria-disabled="true">{this.formatCount()}</a>
+            <span>&nbsp;&nbsp;</span>
+            <button 
+            onClick={(product) => this.handleIncrement()} 
+            className="btn btn-primary btn-sm">Increment
+            </button>
         </React.Fragment>
         );
     }
 
+    handleIncrement = product => {
+        console.log(product);
+        this.setState({count : this.state.count + 1})
+    }
+
+    renderTags()
+    {
+        if (this.state.tags.length === 0)
+           return <p>No tags to render</p>;
+        return this.state.tags.map(obj => <li key={obj}>{obj}</li>);
+    }
+
     getBadgeClasses() {
-        let classes = "p-3 mb-2 text-whiite bg-";
+        let classes = "btn-sm disabled btn btn-";
         classes += this.state.count === 0 ? "warning" : "primary";
         return classes;
     }

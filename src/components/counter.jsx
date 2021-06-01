@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 class Counter extends Component {
     state = { 
-        count: 0,
+        count: this.props.value,
         imageUrl: 'https://picsum.photos/200',
         tags: []
      }
@@ -13,16 +13,16 @@ class Counter extends Component {
     // } 
 
     render() { 
+        console.log("props",this.props);
 
         return (
         <React.Fragment>
-            {/* <p className={this.getBadgeClasses()}>{this.formatCount()}</p> */}
             <a href="#" className={this.getBadgeClasses()} tabindex="-1" role="button" aria-disabled="true">{this.formatCount()}</a>
             <span>&nbsp;&nbsp;</span>
             <button 
             onClick={(product) => this.handleIncrement()} 
             className="btn btn-primary btn-sm">Increment
-            </button>
+            </button> <br/><br/>
         </React.Fragment>
         );
     }

@@ -17,6 +17,7 @@ class Counter extends Component {
 
         return (
         <React.Fragment>
+            {this.props.children}
             <a href="#" className={this.getBadgeClasses()} tabindex="-1" role="button" aria-disabled="true">{this.formatCount()}</a>
             <span>&nbsp;&nbsp;</span>
             <button 

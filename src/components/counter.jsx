@@ -22,8 +22,16 @@ class Counter extends Component {
             <span>&nbsp;&nbsp;</span>
             <button 
             onClick={(product) => this.handleIncrement()} 
-            className="btn btn-primary btn-sm">Increment
-            </button> <br/><br/>
+            className="ben btn-primary btn-sm m-2">
+                Increment
+            </button> 
+            <span>&nbsp;&nbsp;</span>
+            <button 
+            onClick = {this.hadleDelete}
+            className="ben btn-danger btn-sm m-2">
+                Delete
+            </button>
+            <br/><br/>
         </React.Fragment>
         );
     }

@@ -27,7 +27,7 @@ class Counter extends Component {
             </button> 
             <span>&nbsp;&nbsp;</span>
             <button 
-            onClick = {this.hadleDelete}
+            onClick = {() => this.props.onDelete(this.props.id)}
             className="ben btn-danger btn-sm m-2">
                 Delete
             </button>

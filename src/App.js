@@ -15,6 +15,16 @@ class App extends Component {
     ]
  };
 
+ constructor(){
+   super();
+   console.log('App Constructor called');
+ }
+
+ componentDidMount()
+ {
+   console.log('App Mount called');
+ }
+
 handleIncrement = (counter) => {
     console.log('event handler handleIncrement called',counter)
     const counters = [...this.state.counters];
@@ -39,6 +49,7 @@ handleReset = () => {
     this.setState({counters});
 };
   render() { 
+    console.log('App Render called');
     return ( 
       <React.Fragment>
         <NavBar totalCounters = {this.state.counters.filter(c => c.value > 0).length}/>

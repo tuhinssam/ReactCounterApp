@@ -13,15 +13,33 @@ class Counter extends Component {
     //     this.onIncrement = this.props.onIncrement.bind(this.counter);
     // } 
 
-    render() { 
-        console.log("props",this.props.counter);
+    componentDidUpdate(prevProps, prevState)
+    {
+        console.log("Previous Props", prevProps);
+        console.log("Previous states", prevState);
+        if (prevProps.counter.value != this.props.counter.value)
+        {
+            //make ajax call and load data from server
+            console.log('property value changed');
+        }
+    }
 
+    componentWillUnmount()
+    {
+        console.log('Counter - unmount');
+    }
+
+    render() { 
+        //console.log("props",this.props.counter);
+        console.log('Counter Rendered');
         return (
         <React.Fragment>
             {/* {this.props.children} */}
             <span>&nbsp;&nbsp;</span>
 
-            <a href="#" className={this.getBadgeClasses()} tabindex="-1" role="button" aria-disabled="true">{this.formatCount()}</a>
+            <a href="#" className={this.getBadgeClasses()} tabIndex="-1" role="button" aria-disabled="true">
+                {this.formatCount()}
+            </a>
 
             <span>&nbsp;&nbsp;</span>
 

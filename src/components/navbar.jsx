@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 
 //when there is a single function, use stateless functional component like below
-const NavBar = ({props}) => {
-    return ( <nav class="navbar navbar-light bg-light">
+const NavBar = (props) => {
+    console.log('NavBar rendered')
+    return ( <nav className="navbar navbar-light bg-light">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
               Navbar{" "}

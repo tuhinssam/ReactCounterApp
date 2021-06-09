@@ -13,7 +13,7 @@ const NavBar = (props) => {
       </nav> );
 };
 
-
+//alternatively we can have a class
 
 // class NavBar extends Component {
 //     render() { 

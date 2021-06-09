@@ -27,9 +27,9 @@ class App extends Component {
 
 handleIncrement = (counter) => {
     console.log('event handler handleIncrement called',counter)
-    const counters = [...this.state.counters];
+    const counters = [...this.state.counters]; //cloning counters
     const index = counters.indexOf(counter);
-    counters[index] = {...counter};
+    counters[index] = {...counter}; //cloning counter
     counters[index].value++;
     this.setState({counters});
     console.log('after increment ',this.state.counters[0]);
@@ -46,7 +46,7 @@ handleReset = () => {
         c.value = 0;
         return c;
     });
-    this.setState({counters});
+    this.setState({counters}); //set the state after resetting values to zero
 };
   render() { 
     console.log('App Render called');

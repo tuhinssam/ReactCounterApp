@@ -77,3 +77,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 - event bubbling
 - Component lifecycle
 - Functional Components
+
+Layout:
+
+- App
+  - navbar
+  - counters
+    - counter
